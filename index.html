@@ -6,12 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>深藏功与名</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      .markdown-body { 
+        max-width: 980px; 
+        margin: 0 auto; 
+        padding: 45px; 
+      }
+    </style>
   </head>
   <body>
-    
-
-  
-    
+    <article id="content" class="markdown-body"></article>
+  <script>
+     fetch('mac安装ohmyzsh指南.md')
+        .then(r => r.text())
+        .then(text => {
+          document.getElementById('content').innerHTML = marked.parse(text);
+        });
+  </script>
   </body>
   <script src="./js/index.js"></script>
 </html>
